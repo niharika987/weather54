@@ -1,0 +1,69 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+<html lang="en" ng-app="app">
+<head>
+
+	<title>weather dashboard</title>
+	<link href="content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="content/css/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="content/css/custom.css" rel="stylesheet" />
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhotzvEOdmQR5tInByIyy2ql0dHT3ML1A",
+    authDomain: "glossy-fastness-174912.firebaseapp.com",
+    databaseURL: "https://glossy-fastness-174912.firebaseio.com",
+    projectId: "glossy-fastness-174912",
+    storageBucket: "",
+    messagingSenderId: "709147774485"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="vendor/jquery-3.2.1.min.js"></script>
+	
+<script src="vendor/bootstrap.min.js"></script>
+	<script src="vendor/highcharts.js"></script>
+<script src="vendor/angular.min.js"></script>
+<script src="vendor/angular-route.min.js"></script>
+	
+
+	<script src="app/app.module.js"></script>
+	<script src="app/layout/shell.module.js"></script>
+	<script src="app/layout/shell.ctrl.js"></script>
+	<script src="app/search/search.module.js"></script>
+	<script src="app/search/search.ctrl.js"></script>
+	<script src="app/weather/weather.module.js"></script>
+	<script src="app/weather/weather.ctrl.js"></script>
+	<script src="app/forecast/forecast.module.js"></script>
+	<script src="app/forecast/forecast.ctrl.js"></script>
+	<script src="app/component/component.module.js"></script>
+	<script src="app/component/search.view.js"></script>
+	<script src="app/data/data.module.js"></script>
+	<script src="app/data/weather.svc.js"></script>
+	
+<style>
+b{
+	color: white;
+	font-family: initial;
+}
+.bg{
+	background-image: url("weather2.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;  
+}
+</style>
+</head>
+<body class="bg">
+<center>	<div ng-include="'app/layout/shell.html'"></div>
+		
+		<h2 ><b >know the weather around you </b> 
+	</h2>
+	</center>
+	</body>
+	</html>
+
+	

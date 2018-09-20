@@ -1,0 +1,39 @@
+
+<style>
+b,p{
+	
+	font-family: initial;
+	font-size: 20;
+}
+.names{
+	font-weight:bold;
+	font-size: 20;
+	color: white;
+}
+</style>
+<div class="row">
+	<div class="col-lg-12">
+<ne-search-box></ne-search-box>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table">
+			<tbody>
+				<tr ng-repeat="city in cities">
+					<td>
+						<img src="https://openweathermap.org/img/w/{{city.weather[0].icon}}.png"> 
+					</td>
+						<td><span class="names">
+							<b><a href="#!/weather/{{city.id}}">{{city.name}},{{city.sys.country}}</a></b>
+							<img src="https://openweathermap.org/images/flags/{{city.sys.country.toLowerCase()}}.png">
+							<b><i> {{city.weather[0].description}}</i></b>
+							<p> <span class="badge">{{city.main.temp-273.15 | number}}*C</span>,<br> min-temp:{{city.main.temp_min-273.15 |number }}*c <br>max-temp:{{city.main.temp_max-273.15 |number}}*c,<br>
+							humidity:{{city.main.humidity |number}}% </p>
+						</span> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>

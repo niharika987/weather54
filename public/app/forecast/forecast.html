@@ -1,0 +1,62 @@
+<style>
+.button {
+    display: block;
+    width: 115px;
+    height: 55px;
+    background: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+
+<style>
+b,p,td{
+	
+	font-family: initial;
+	font-size: 20;
+}
+.names{
+	font-weight:bold;
+	font-size: 20;
+	color: white;
+}
+</style>
+</style>
+<b>
+<div class="row">
+<a href="#!/search" class="button"> back to search</a>&nbsp
+<a href="#!/weather/{{fore1}}" class="button">current weather</a>
+	</div>
+<div class="row">
+	<div class="col-lg-12">
+<ne-search-box></ne-search-box>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table">
+			<tbody>
+				<tr ng-repeat="fore in forecast">
+					<td ><span class="names">
+						{{fore.dt*1000 | date: 'yyyy-MMM-dd HH::mm::ss'}}<img src="https://openweathermap.org/img/w/{{fore.weather[0].icon}}.png"> 
+					</span></td>
+						<td><span class="names">
+
+							<b><i> {{fore.weather[0].description}}</i></b>
+							<p> <span class="badge"> min temp:{{fore.main.temp_min-273.15 |number}}</span>, <br>max temp:{{fore.main.temp_max-273.15 | number}}, <br>
+							wind speed :{{fore.main.humidity }}m/s
+							<br>
+							pressure
+							{{fore.main.pressure}} hpa </p>
+						</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	</b>

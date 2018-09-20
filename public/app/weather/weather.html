@@ -1,0 +1,107 @@
+<style>
+.button {
+    display: block;
+    width: 115px;
+    height: 55px;
+    background: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+<style>
+td{
+	
+	font-family: initial;
+	font-size: 20;
+}
+.names{
+	font-weight:bold;
+	font-size: 20;
+	color: white;
+}
+</style>
+
+
+<b>
+<div class="row">
+<a href="#!/search" class="button"> back to search</a> &nbsp
+<a href="#!/forecast/{{current.data.id}}" class="button">show forecast</a>
+	</div>
+<div class="row">
+	<div class="col-lg-12">
+<div>
+	<h4> {{current.data.name}}, {{current.data.sys.country}}</h4>
+	<ul class="list-inline">
+<li>
+	<img src="https://openweathermap.org/img/w/{{current.data.weather[0].icon}}.png"> 
+				
+</li>
+<li>
+	<h2> {{current.data.main.temp -273.15|number}} &#8451;</h2>
+</li>
+	</ul>
+	
+<p class="names">got at:{{getTime(current.data.dt) |date: 'yyyy-MMM-dd HH::mm::ss'}}</p>
+	
+
+		<table class="table">
+			<tbody>
+				<tr >
+					<td ><span class="names">
+						wind </span>
+					</td>
+						<td><span class="names">
+							speed {{current.data.wind.speed}}m/s </span>
+						</td>
+					</tr>
+<tr >
+					<td> <span class="names">
+						pressure</span>
+					</td>
+						<td> <span class="names">
+							 {{current.data.main.pressure}}hpa
+						</td></span>
+					</tr>
+					<tr >
+					<td><span class="names">
+						cloudiness</span>
+					</td>
+						<td><span class="names">
+							 {{current.data.weather[0].description}}</span>
+						</td>
+					</tr>
+
+					<tr >
+					<td><span class="names">
+						humidity:</span>
+					</td>
+						<td><span class="names">
+							 {{current.data.main.humidity}}</span>
+						</td>
+					</tr>
+
+					<tr >
+					<td><span class="names">
+						sunrise</span>
+					</td>
+						<td><span class="names">
+							 {{current.data.sys.sunrise | date: 'HH::mm::ss'}}
+						</span></td>
+					</tr>
+						<tr >
+					<td><span class="names">
+						sunset</span>
+					</td>
+						<td><span class="names">
+							 {{current.data.sys.sunset | date: 'HH::mm::ss'}}
+						</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</b>
